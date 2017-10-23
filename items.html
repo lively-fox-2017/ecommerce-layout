@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DimCommerce</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="text-center">
+      <h1>Items</h1>
+      <button data-toggle="modal" data-target="#add-item-modal" type="button" class="btn btn-primary"><span class="fa fa-plus"></span> Add an Item</button>
+    </div>
+
+    <hr>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Details</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Nesoberi "Watanabe You - Mijuku DREAMER"
+          </td>
+          <td>
+            Love Live! Sunshine!! Nesoberi Plushie "Watanabe You - Mijuku DREAMER" (S)
+          </td>
+          <td>
+            $ 21.95
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Nesoberi "Tsushima Yoshiko - Mijuku DREAMER"
+          </td>
+          <td>
+            Love Live! Sunshine!! Nesoberi Plushie "Tsushima Yoshiko - Mijuku DREAMER" (S)
+          </td>
+          <td>
+            $ 21.95
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Add an Item Modal -->
+  <div class="modal fade" id="add-item-modal" tabindex="-1" role="dialog" aria-labelledby="add-item-label">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+          <h4 class="modal-title" id="add-item-label">Add an Item</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="details">Details</label>
+                <input type="text" name="details" class="form-control" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" name="price" class="form-control" autocomplete="off">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap-number-input.js"></script>
+
+</body>
+
+</html>
