@@ -5,9 +5,11 @@
     <title>E-commerce</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
     <!-- <link rel="stylesheet" href="/media/nncrawler/5252598A525973A7/Learning Material/Hacktiv8/Phase-2/week-2/E-commerce Layout/css/bulma-0.6.0/css"> -->
   </head>
   <body>
@@ -29,9 +31,10 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar-top">
-          <a class="navbar-brand text-light">Home</a>
-          <a class="nav-link text-light" href="">Special Price</a>
-          <a class="nav-link align-self-end text-light" href="#">Cart</a>
+          <a class="navbar-brand text-light"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          <a class="nav-link text-light" href=""><i class="fa fa-dollar" aria-hidden="true"></i> Special Deals</a>
+
+          <a class="nav-link align-self-end text-light" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
         </div>
 
       </nav>
@@ -48,11 +51,14 @@
             CATEGORY
           </button>
           <div class="flex-column collapse navbar-collapse" id="sidebar">
-            <a class="side-menu nav-link text-muted mt-2 border border-dark border-top-0 border-right-0 border-left-0" href="">Kasur</a>
-            <a class="side-menu nav-link text-muted border border-dark border-top-0 border-right-0 border-left-0" href="">Aksesoris</a>
-            <a class="side-menu nav-link text-muted border border-dark border-top-0 border-right-0 border-left-0" href="">Lemari</a>
-            <a class="side-menu nav-link text-muted border border-dark border-top-0 border-right-0 border-left-0" href="">Meja</a>
-            <a class="side-menu nav-link text-muted border border-dark border-top-0 border-right-0 border-left-0" href="">Penerangan</a>
+            <form class="form-inline" action="index.html" method="post">
+              <input type="text" class="search form-control mb-2 mr-sm-2 mb-sm-0" name="search" placeholder="Enter to Search">
+            </form>
+            <a class="side-menu nav-link text-muted mt-2 border border-dark" href="">Kasur</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Aksesoris</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Lemari</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Meja</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Penerangan</a>
 
           </div>
           <!-- asdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
@@ -61,7 +67,7 @@
         <div class="col catalogue">
           <div class="container">
             <div class="row">
-              <img class="img-fluid" src="https://id-live.slatic.net/original/b7eb46a609a583db787eb8288928d592.jpg" alt="Banner">
+              <img class="img-fluid" src="http://www.acehardware.com/cms_widgets/27/49/2749283_assets/c_14487_Fire_Spirit.jpg" alt="Banner">
             </div>
             <div class="row bg-light">
 
@@ -69,84 +75,103 @@
                 <div class="d-flex flex-wrap flex-row justify-content-center">
 
                   <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                    <img class="card-img-top img-thumbnail" src="https://id-live-01.slatic.net/p/3/bestway-sofa-bed-2-in-1-double-sofa-multifungsi-67356-hijau-1462851772-248339-799824a4031c3fd64f879c7702bd2cae-webp-catalog_233.jpg" alt="catalog">
                     <div class="card-body">
-                      <p class="card-title">Nama Barang</p>
-                      <p class="card-text">harga</p>
-                      <p class="card-text">dijual oleh</p>
+                      <p class="card-title">Bestway Sofa Bed 2 in 1 Double</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">RP 2.000.000</small>
                     </div>
                   </div>
 
                   <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                    <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/kursi-lesehan-bangku-lantai-anti-pegal-dewasa-1506050839-88026574-b8fbe1cdc1ee07f0caaac960e2430ede-webp-zoom.jpg" alt="catalog">
                     <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text"></p>
+                      <p class="card-title">Kursi Hacktiv8 Anti Pegal</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">RP 379.000</small>
                     </div>
                   </div>
 
                   <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                    <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/rexus-gaming-chair-rgc-101-1504152317-24316083-aa29eca0d17ab76342cdcdd9408cafa3-webp-zoom.jpg" alt="catalog">
                     <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text"></p>
+                      <p class="card-title">Kursi Gaming Chair RGC</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">RP 299.000.000</small>
                     </div>
                   </div>
 
                   <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                    <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/aiueo-lemari-pakaian-5-pintu-type-56-hitam-1475229773-45332001-0c7576faa9fb20e8f8bae92131bd3264-webp-zoom.jpg" alt="catalog">
                     <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text"></p>
+                      <p class="card-title">Lemari Pakaian 5 Pintu Type 5.6</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">RP 429.999</small>
                     </div>
                   </div>
 
                   <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                    <img class="card-img-top img-thumbnail" src="https://id-live-01.slatic.net/p/3/paling-laku-keset-microfiber-high-quality-keset-cendol-multi-color-1490325642-34632001-595f41c6f675274a965f7eb418a0dad5-webp-zoom.jpg" alt="catalog">
                     <div class="card-body">
-                      <h4 class="card-title">Card title</h4>
-                      <p class="card-text"></p>
+                      <p class="card-title">keset Microfiber</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">RP 19.999</small>
                     </div>
                   </div>
 
                   <div class="p-2 card catalog m-3">
-                   <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                   <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/shaggy-anti-skid-carpets-rugs-floor-matcover-80x120cm-grass-green-intl-1477500782-2546542-b0fb71ad2f8a0b4488624d99f896bb2b-webp-zoom.jpg" alt="catalog">
                    <div class="card-body">
-                     <h4 class="card-title">Card title</h4>
-                     <p class="card-text"></p>
+                     <p class="card-title">Shaggy Anti-skid Carpets</p>
+                   </div>
+                   <div class="card-footer">
+                     <small class="text-muted">RP 335.000</small>
                    </div>
                  </div>
 
                  <div class="p-2 card catalog m-3">
-                  <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                  <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/the-olive-house-lemari-tv-kabinet-serbaguna-helsinki-natural-1499998501-7980185-ea14ef155068b1c97d687328cdad15ed-webp-zoom.jpg" alt="catalog">
                   <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text"></p>
+                    <p class="card-title">Olive House Lemar</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">RP 1.090.000</small>
                   </div>
                 </div>
 
                 <div class="p-2 card catalog m-3">
-                  <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                  <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/floating-shelves-uk-80x20-1496923455-83452842-d46da850cf5032df99959a572bdaefab-webp-zoom.jpg" alt="catalog">
                   <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text"></p>
+                    <p class="card-title">Floating Shelves</p>
+                  </div>
+                  <div class="card-footer">
+                    <small class="text-muted">RP 300.000</small>
                   </div>
                 </div>
 
                 <div class="p-2 card catalog m-3">
-                 <img class="card-img-top img-thumbnail" src="" alt="catalog">
+                 <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/olympic-premium-wall-unit-metropolis-series-1460088450-6864917-cde7e81f9cf2e9a37585f6253fb703cf-webp-zoom.jpg" alt="catalog">
                  <div class="card-body">
-                   <h4 class="card-title">Card title</h4>
-                   <p class="card-text"></p>
+                   <p class="card-title">Olympic Premium Wall Unit Metropolis</p>
+                 </div>
+                 <div class="card-footer">
+                   <small class="text-muted">RP 5.030.400</small>
                  </div>
                </div>
 
                <div class="p-2 card catalog m-3">
-                <img class="card-img-top img-thumbnail" src="" alt="catalog">
-                <div class="card-body">
-                  <h4 class="card-title">Card title</h4>
-                  <p class="card-text"></p>
-                </div>
+              <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/star-projector-lampu-tidur-proyeksi-bintang-1496981678-20231942-5f0117fe9c806fa1ef38a583a7a9d578-webp-zoom.jpg" alt="catalog">
+              <div class="card-body">
+                <p class="card-title">Star Projector Lampu Tidur</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">RP 140.000</small>
+              </div>
               </div>
 
                 </div>
