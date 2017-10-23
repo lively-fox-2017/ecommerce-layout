@@ -276,3 +276,119 @@ footer{
   background-color: #ffe700;
   cursor: pointer;
 }
+
+/*~~~~~~~~~~~~~~~~~~Content~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+nav .logout{
+  color: #f4d100;
+  padding: 30px;
+  font-weight: bold;
+  /*border-bottom: 1px solid white;*/
+  /*box-sizing: border-box;*/
+}
+
+nav .logout:hover{
+  border-bottom: 1px solid red;
+  color: red;
+  /*box-sizing: border-box;*/
+}
+
+.adminproduct, .admincontact{
+  display: none;
+  width: 80%;
+  background: white;
+  /*display: flex;*/
+  flex-direction: column;
+  overflow: auto;
+}
+
+.adminproduct .search{
+  width: 100%;
+}
+
+.adminproduct .search input[name="filter"]{
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ffe700;
+  box-sizing: content-box;
+}
+
+.adminproduct .search button[name="add"]{
+  width: 22%;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #ffe700;
+  background-color: white;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.adminproduct button[name="add"]:hover{
+  background-color: #ffe700;
+  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+  color: white;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.adminproduct table, .admincontact table{
+  width: 100%;
+  margin-top: 20px;
+  background: white;
+  border: none;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+.adminproduct tr:nth-child(even), .admincontact tr:nth-child(even){
+  background-color: #eaeaea;
+}
+
+.adminproduct tr, .adminproduct td, .admincontact tr, .admincontact td{
+  padding: 5px;
+  border-bottom: 1px solid #ffe700;
+  font-weight: normal;
+}
+
+.adminproduct th, .admincontact th{
+  background-color: #ffe700;
+  padding: 10px;
+  box-sizing: content-box;
+}
+
+.adminproduct button[name="edit"], .adminproduct button[name="delete"], .admincontact button[name="delete"]{
+  border: 1px solid #ffe700;
+  box-sizing: content-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.adminproduct button[name="edit"]{
+  background-color: white;
+}
+
+.adminproduct button[name="edit"]:hover{
+  background-color: #ffe700;
+  box-shadow: 1px 1px 10px 3px rgba(0,0,0,0.5);
+  color: white;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.adminproduct button[name="delete"], .admincontact button[name="delete"]{
+  background-color: red;
+  color: white;
+}
+
+.adminproduct button[name="delete"]:hover, .admincontact button[name="delete"]:hover{
+  box-shadow: 1px 1px 10px 3px rgba(255,0,0,0.5);
+  color: white;
+  transition: all 1s ease;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
