@@ -233,3 +233,46 @@ footer{
   background-color: #ffe700;
   padding: 20px;
 }
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Admin~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.loginform{
+  width: 30%;
+  margin-top: 15%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 5px #ffe700;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+}
+
+.loginform h1{
+  margin-bottom: 20px;
+}
+
+.loginform label{
+  width: 96%;
+  background-color: white;
+  padding: 10px;
+  color: #f4d100;
+  text-align: center;
+}
+
+.loginform input[type="text"], .loginform input[type="password"]{
+  width: 96%;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ffe700;
+  color: #f4d100;
+  text-align: center;
+}
+
+.loginform input[type="submit"]{
+  width: 100%;
+  margin-top: 20px;
+  border: 0px;
+  padding: 10px;
+  background-color: #ffe700;
+  cursor: pointer;
+}
