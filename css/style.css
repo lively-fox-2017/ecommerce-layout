@@ -16,6 +16,15 @@
   border-color: #fff !important;
 }
 
+.img-thumbnail-cart{
+  height: 100px;
+  width: 100px;
+}
+
+.amount-cart{
+  width: 40px;
+}
+
 @media (min-width: 992px) {
   .sidebar{
     height: 100vh;
@@ -24,12 +33,13 @@
 
 .catalog{
   width: 170px;
-  
+
 
 }
 
-.catalog-thumb{
-
+.footer{
+  position: relative;
+  bottom: 0;
 }
 
 .logo{
