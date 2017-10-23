@@ -63,8 +63,8 @@
         <hr>
         <div class="list-group">
           <a href="#" class="list-group-item">All</a>
-          <a href="#" class="list-group-item active">Nesoberi</a>
-          <a href="#" class="list-group-item">Nendoroid</a>
+          <a href="#" class="list-group-item active">Nesoberies</a>
+          <a href="#" class="list-group-item">Nendoroids</a>
           <a href="#" class="list-group-item">T-Shirts</a>
           <a href="#" class="list-group-item">Jackets</a>
           <a href="#" class="list-group-item">Shoes</a>
@@ -296,10 +296,61 @@
     </div>
   </footer>
 
+  <!-- Register Modal -->
+  <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-label">
+
+    <div class="modal-dialog modal-sm" role="document">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+          <h4 class="modal-title" id="register-label">Register</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="form-control" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" class="form-control" autocomplete="off">
+              </div>
+
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" class="form-control" autocomplete="off">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Register</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <!-- Login Modal -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label">
 
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-sm" role="document">
 
       <div class="modal-content">
 
@@ -318,13 +369,15 @@
 
               <div class="input-group">
                 <span class="input-group-addon" id="username-addon"><span class="fa fa-user fa-fw"></span></span>
-                <input type="text" class="form-control" id="username" placeholder="Username" autocomplete="off" aria-describedby="username-addon">
+                <input type="text" class="form-control" name="username" placeholder="Username" autocomplete="off" aria-describedby="username-addon">
               </div>
               <br>
               <div class="input-group">
                 <span class="input-group-addon" id="password-addon"><span class="fa fa-key fa-fw"></span></span>
-                <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" aria-describedby="password-addon">
+                <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="off" aria-describedby="password-addon">
               </div>
+              <br>
+              <span>Didn't have an account? Register <a href="#" id="show-register">here</a>.</span>
 
             </div>
           </div>
@@ -472,22 +525,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/bootstrap-number-input.js"></script>
 
-  <script>
-    $('#show-shopping-cart').click(function (event) {
-      event.preventDefault();
-      $('#shopping-cart-modal').modal('show');
-    });
-
-    $('#show-login').click(function (event) {
-      event.preventDefault();
-      $('#login-modal').modal('show');
-    });
-
-    $('.quantity-field').bootstrapNumber({
-      upClass: 'primary',
-      downClass: 'primary'
-    });
-  </script>
+  <script src="assets/js/dimcommerce.js"></script>
 </body>
 
 </html>
