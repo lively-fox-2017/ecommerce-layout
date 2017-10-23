@@ -31,6 +31,7 @@
           <li><a href="#">Sale</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id="show-login">Login</a></li>
           <li><a href="#" id="show-shopping-cart"><span class="fa fa-shopping-cart"></span> Shopping Cart <span class="badge badge-danger">5</span></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> <span class="caret"></span></a>
@@ -295,6 +296,52 @@
     </div>
   </footer>
 
+  <!-- Login Modal -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-label">
+
+    <div class="modal-dialog" role="document">
+
+      <div class="modal-content">
+
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+          <h4 class="modal-title" id="login-label">Login</h4>
+
+        </div>
+
+        <div class="modal-body">
+
+          <div class="row">
+            <div class="col-xs-12">
+
+              <div class="input-group">
+                <span class="input-group-addon" id="username-addon"><span class="fa fa-user fa-fw"></span></span>
+                <input type="text" class="form-control" id="username" placeholder="Username" autocomplete="off" aria-describedby="username-addon">
+              </div>
+              <br>
+              <div class="input-group">
+                <span class="input-group-addon" id="password-addon"><span class="fa fa-key fa-fw"></span></span>
+                <input type="password" class="form-control" id="password" placeholder="Password" autocomplete="off" aria-describedby="password-addon">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Login</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
   <!-- Shopping Cart Modal -->
   <div class="modal fade" id="shopping-cart-modal" tabindex="-1" role="dialog" aria-labelledby="shopping-cart-label">
 
@@ -427,11 +474,13 @@
 
   <script>
     $('#show-shopping-cart').click(function (event) {
-
       event.preventDefault();
-
       $('#shopping-cart-modal').modal('show');
+    });
 
+    $('#show-login').click(function (event) {
+      event.preventDefault();
+      $('#login-modal').modal('show');
     });
 
     $('.quantity-field').bootstrapNumber({
