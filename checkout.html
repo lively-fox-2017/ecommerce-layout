@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" href="/media/nncrawler/5252598A525973A7/Learning Material/Hacktiv8/Phase-2/week-2/E-commerce Layout/css/bulma-0.6.0/css"> -->
+  </head>
+  <body>
+
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <img class="logo mt-3 mb-3" src="/asset/Logo.png" alt="Logo">
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <nav class="justify-content-start navbar navbar-expand-lg navbar-light nav-top mb-3">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-top" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-top">
+          <a class="navbar-brand text-light"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+          <a class="nav-link text-light" href=""><i class="fa fa-dollar" aria-hidden="true"></i> Special Deals</a>
+
+          <a class="nav-link align-self-end text-light" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+        </div>
+
+      </nav>
+
+    </header>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="navbar-expand-lg navbar-light col-12 col-lg-2 sidebar rounded-left">
+          <button class="navbar-toggler category" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            CATEGORY
+          </button>
+          <div class="flex-column collapse navbar-collapse" id="sidebar">
+            <form class="form-inline" action="index.html" method="post">
+              <input type="text" class="search form-control mb-2 mr-sm-2 mb-sm-0" name="search" placeholder="Press Enter to Search">
+            </form>
+            <a class="side-menu nav-link text-muted mt-2 border border-dark" href="">Kasur</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Aksesoris</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Lemari</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Meja</a>
+            <a class="side-menu nav-link text-muted border border-dark" href="">Penerangan</a>
+
+          </div>
+          <!-- asdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+        </div>
+
+        <div class="col">
+          <div class="row">
+            <h1 class="col-12 text-center">Checkout</h1>
+          </div>
+
+          <div class="card purchased-item d-flex flex-row p-2">
+            <img class="img-thumbnail-cart" src="https://id-live-01.slatic.net/p/3/bestway-sofa-bed-2-in-1-double-sofa-multifungsi-67356-hijau-1462851772-248339-799824a4031c3fd64f879c7702bd2cae-webp-catalog_233.jpg" alt="">
+            <p class="align-self-center text-dark">Bestway Sofa Bed 2 in 1 Double</p>
+            <div class="justify-content-between ml-auto p-2">
+              <p>  RP 300.000 @</p>
+              <input class="amount-cart" type="text form" name="" value="2">
+              <button class="btn-danger" type="button" name="button">OK</button>
+            </div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-9">
+
+            </div>
+            <div class="col text-black">
+              <p>Discount : RP 100.000</p>
+              <p>Total : RP 200.000</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-8">
+
+            </div>
+
+            <button class="col btn-danger" type="button" name="button">Purchase</button>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="cards text-center">
+        <div class="card-block">
+          <a href="#">About</a> |
+          <a href="#">Android</a> |
+          <a href="#">iPhone</a> |
+          <a href="#">Refunds</a> |
+          <a href="#">Track My Package</a>
+        </div>
+        <i class="fa fa-copyright text-muted"> NNcrawler development.</i>
+      </div>
+
+    </footer>
+
+</body>
+</html>

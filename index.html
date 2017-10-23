@@ -34,7 +34,7 @@
           <a class="navbar-brand text-light"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
           <a class="nav-link text-light" href=""><i class="fa fa-dollar" aria-hidden="true"></i> Special Deals</a>
 
-          <a class="nav-link align-self-end text-light" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+          <a class="nav-link align-self-end text-light" data-toggle="modal" data-target="#cart" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
         </div>
 
       </nav>
@@ -186,12 +186,67 @@
 
     </div>
 
-    <footer class="footer">
+    <footer class="footer mt-5">
       <div class="cards text-center">
+        <div class="card-block">
+          <a href="#">About</a> |
+          <a href="#">Android</a> |
+          <a href="#">iPhone</a> |
+          <a href="#">Refunds</a> |
+          <a href="#">Track My Package</a>
+        </div>
         <i class="fa fa-copyright text-muted"> NNcrawler development.</i>
       </div>
 
     </footer>
+
+
+
+
+
+    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">
+      Launch demo modal
+    </button> -->
+
+
+
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="col">
+            <div class="card purchased-item d-flex flex-row p-2">
+              <img class="img-thumbnail-cart" src="https://id-live-01.slatic.net/p/3/bestway-sofa-bed-2-in-1-double-sofa-multifungsi-67356-hijau-1462851772-248339-799824a4031c3fd64f879c7702bd2cae-webp-catalog_233.jpg" alt="">
+              <p class="align-self-center text-dark">Bestway Sofa Bed 2 in 1 Double</p>
+              <div class="justify-content-between ml-auto p-2">
+                <p>  RP 300.000 @</p>
+                <input class="amount-cart" type="text form" name="" value="2">
+                <button class="btn-danger" type="button" name="button">OK</button>
+              </div>
+            </div>
+
+            <div class="row mt-1">
+
+              <div class="col text-black">
+
+                <p class="text-dark">Total : RP 200.000</p>
+              </div>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>
