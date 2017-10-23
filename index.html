@@ -28,28 +28,16 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">One more separated link</a></li>
-            </ul>
-          </li>
           <li><a href="#">Sale</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="fa fa-shopping-cart"></span> &nbsp; Cart <span class="badge badge-danger">5</span></a></li>
+          <li><a href="#" id="show-shopping-cart"><span class="fa fa-shopping-cart"></span> Shopping Cart <span class="badge badge-danger">5</span></a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-user"></span> <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <p class="navbar-text">Signed in as <strong>Dimitri</strong></p>
-              <li><a href="#"><span class="fa fa-user"></span> &nbsp; My Account</a></li>
-              <li><a href="#"><span class="fa fa-power-off"></span> &nbsp; Logout</a></li>
+              <li><a href="#"><span class="fa fa-user"></span> My Account</a></li>
+              <li><a href="#"><span class="fa fa-power-off"></span> Logout</a></li>
             </ul>
           </li>
         </ul>
@@ -70,8 +58,10 @@
 
       <div class="col-md-3">
 
-        <h3 class="page-header">Categories</h3>
+        <h3>Categories</h3>
+        <hr>
         <div class="list-group">
+          <a href="#" class="list-group-item">All</a>
           <a href="#" class="list-group-item active">Nesoberi</a>
           <a href="#" class="list-group-item">Nendoroid</a>
           <a href="#" class="list-group-item">T-Shirts</a>
@@ -85,7 +75,8 @@
 
       <div class="col-md-9">
 
-        <h3 class="page-header">Items</h3>
+        <h3>Items</h3>
+        <hr>
 
         <div class="row">
 
@@ -304,8 +295,150 @@
     </div>
   </footer>
 
+  <!-- Shopping Cart Modal -->
+  <div class="modal fade" id="shopping-cart-modal" tabindex="-1" role="dialog" aria-labelledby="shopping-cart-label">
+
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="shopping-cart-label"><span class="fa fa-shopping-cart"></span> Shopping Cart</h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <img src="assets/img/nesoberi-mari.jpg" alt="Nesoberi Ohara Mari" class="img-responsive">
+            </div>
+
+            <div class="col-md-10">
+              <p>
+
+                <strong>Nesoberi "Ohara Mari - Mijuku DREAMER"</strong>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control quantity-field" value="1"><br>
+                    <span>Price: <strong>$ 21.95</strong></span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <img src="assets/img/nesoberi-kanan.jpg" alt="Nesoberi Matsuura Kanan" class="img-responsive">
+            </div>
+
+            <div class="col-md-10">
+              <p>
+
+                <strong>Nesoberi "Matsuura Kanan - Mijuku DREAMER"</strong>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control quantity-field" value="1"><br>
+                    <span>Price: <strong>$ 21.95</strong></span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <img src="assets/img/nesoberi-riko.jpg" alt="Nesoberi Sakurauchi Riko" class="img-responsive">
+            </div>
+
+            <div class="col-md-10">
+              <p>
+
+                <strong>Nesoberi "Sakurauchi Riko - Mijuku DREAMER"</strong>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control quantity-field" value="1"><br>
+                    <span>Price: <strong>$ 21.95</strong></span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <img src="assets/img/nesoberi-yohane.jpg" alt="Nesoberi Tsushima Yoshiko" class="img-responsive">
+            </div>
+
+            <div class="col-md-10">
+              <p>
+
+                <strong>Nesoberi "Tsushima Yoshiko - Mijuku DREAMER"</strong>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control quantity-field" value="1"><br>
+                    <span>Price: <strong>$ 21.95</strong></span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+          <hr>
+
+          <div class="row">
+
+            <div class="col-md-2">
+              <img src="assets/img/nesoberi-you.jpg" alt="Nesoberi Watanabe You" class="img-responsive">
+            </div>
+
+            <div class="col-md-10">
+              <p>
+
+                <strong>Nesoberi "Watanabe You - Mijuku DREAMER"</strong>
+                <div class="row">
+                  <div class="col-xs-4">
+                    <input type="number" class="form-control quantity-field" value="1"><br>
+                    <span>Price: <strong>$ 21.95</strong></span>
+                  </div>
+                </div>
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <h4 class="pull-left">Total: <strong>$ 109.75</strong></h4>
+          <button type="button" class="btn btn-success"><span class="fa fa-cart-arrow-down"></span> Checkout</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
   <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap-number-input.js"></script>
+
+  <script>
+    $('#show-shopping-cart').click(function (event) {
+
+      event.preventDefault();
+
+      $('#shopping-cart-modal').modal('show');
+
+    });
+
+    $('.quantity-field').bootstrapNumber({
+      upClass: 'primary',
+      downClass: 'primary'
+    });
+  </script>
 </body>
 
 </html>
