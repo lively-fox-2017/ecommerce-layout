@@ -1,0 +1,15 @@
+
+@media (min-width: 992px) {
+  .sidebar{
+    height: 100vh;
+  }
+}
+
+.catalog{
+  min-width: 170px;
+  min-height: 200px;
+}
+
+.catalog-thumb{
+
+}
