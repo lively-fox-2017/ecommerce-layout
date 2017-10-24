@@ -1,0 +1,32 @@
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+	font-family: Helvetica;
+}
+
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main-container {
+  /* keep footer at the bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
