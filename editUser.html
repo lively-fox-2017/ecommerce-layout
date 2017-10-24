@@ -1,0 +1,26 @@
+<html>
+        <head>
+            <script src="https://unpkg.com/vue"></script> 
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>        
+        </head>
+        <body>
+            <div id="app">
+                <form>
+                    <input type="text" ref="old_name">
+                    <input type="password" ref="old_password">
+                    <br>
+                    <input type="text" ref="name">
+                    <input type="password" ref="password">
+                    <input type="text" ref="email">
+                    <button @click.prevent="getFormValues()">Edit User</button>
+                </form>
+                <list-item
+                v-for="item in customers"
+                v-bind:list="item"
+                v-bind:key="item.id"
+                @deleted="hapus">
+                <a href='index.html'>Home</a>
+            </div>
+            <script src="./scripts/editUser.js"></script>        
+        </body>
+    </html>

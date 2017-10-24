@@ -142,6 +142,8 @@
     })
   ;
   </script>
+  <script src="https://unpkg.com/vue"></script> 
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>        
 </head>
 <body class="pushable">
 
@@ -167,14 +169,14 @@
         <a class="ui button">Log in</a>
       </div>
       <div class="item">
-        <a class="ui primary button">Sign Up</a>
+        <a class="ui primary button" href='signup.html'>Sign Up</a>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Page Contents -->
-<div class="pusher">
+<div class="pusher" id="app">
   <div class="ui inverted vertical masthead center aligned segment">
 
     <div class="ui container">
@@ -187,7 +189,7 @@
         <div class="right item">
           <a class="ui inverted button" id="toggleButtonBar" onclick=sidebar()>Cart</a>            
           <a class="ui inverted button">Log in</a>
-          <a class="ui inverted button">Sign Up</a>
+          <a class="ui inverted button" href='signup.html'>Sign Up</a>
         </div>
       </div>
     </div>
@@ -230,7 +232,12 @@
 
   <div class="ui center aligned segment">
       <div class="ui special cards">
-          <div class="card">
+          <list-item
+          v-for="item in data"
+          v-bind:list="item"
+          v-bind:key="item.id">
+          </list-item>
+          <div class="card" style='display:none'>
             <div class="blurring dimmable image">
               <div class="ui dimmer">
                 <div class="content">
@@ -239,7 +246,7 @@
                   </div>
                 </div>
               </div>
-              <img src="/images/elliot.jpg">
+              <img src="">
             </div>
             <div class="content">
               <a class="header">Item 1</a>
@@ -254,126 +261,6 @@
               </a>
             </div>
           </div>
-          <div class="card">
-            <div class="blurring dimmable image">
-              <div class="ui dimmer">
-                <div class="content">
-                  <div class="center">
-                    <div class="ui inverted button" onclick=tada()>Add to cart</div>
-                  </div>
-                </div>
-              </div>
-              <img src="/images/molly.png">
-            </div>
-            <div class="content">
-              <a class="header">Item 2</a>
-              <!-- <div class="meta">
-                <span class="date">Create in Aug 2014</span>
-              </div> -->
-            </div>
-            <div class="extra content">
-              <a>
-                <i class="tags icon"></i>
-                Price
-              </a>
-            </div>
-          </div>
-          <div class="card">
-              <div class="blurring dimmable image">
-                <div class="ui dimmer">
-                  <div class="content">
-                    <div class="center">
-                      <div class="ui inverted button" onclick=tada()>Add to cart</div>
-                    </div>
-                  </div>
-                </div>
-                <img src="/images/elliot.jpg">
-              </div>
-              <div class="content">
-                <a class="header">Item 2</a>
-                <!-- <div class="meta">
-                  <span class="date">Create in Aug 2014</span>
-                </div> -->
-              </div>
-              <div class="extra content">
-                <a>
-                  <i class="tags icon"></i>
-                  Price
-                </a>
-              </div>
-            </div>
-            <div class="card">
-                <div class="blurring dimmable image">
-                  <div class="ui dimmer">
-                    <div class="content">
-                      <div class="center">
-                        <div class="ui inverted button" onclick=tada()>Add to cart</div>
-                      </div>
-                    </div>
-                  </div>
-                  <img src="/images/molly.png">
-                </div>
-                <div class="content">
-                  <a class="header">Item 2</a>
-                  <!-- <div class="meta">
-                    <span class="date">Create in Aug 2014</span>
-                  </div> -->
-                </div>
-                <div class="extra content">
-                  <a>
-                    <i class="tags icon"></i>
-                    Price
-                  </a>
-                </div>
-              </div>
-              <div class="card">
-                  <div class="blurring dimmable image">
-                    <div class="ui dimmer">
-                      <div class="content">
-                        <div class="center">
-                          <div class="ui inverted button" onclick=tada()>Add to cart</div>
-                        </div>
-                      </div>
-                    </div>
-                    <img src="/images/elliot.jpg">
-                  </div>
-                  <div class="content">
-                    <a class="header">Item 2</a>
-                    <!-- <div class="meta">
-                      <span class="date">Create in Aug 2014</span>
-                    </div> -->
-                  </div>
-                  <div class="extra content">
-                    <a>
-                      <i class="tags icon"></i>
-                      Price
-                    </a>
-                  </div>
-                </div>
-                <div class="card">
-                    <div class="blurring dimmable image">
-                      <div class="ui dimmer">
-                        <div class="content">
-                          <div class="center">
-                            <div class="ui inverted button" onclick=tada()>Add to cart</div>
-                          </div>
-                        </div>
-                      </div>
-                      <img src="/images/molly.png">
-                    </div>
-                    <div class="content">
-                      <a class="header">Item 2</a>
-                      <!-- <div class="meta">
-                        <span class="date">Create in Aug 2014</span>
-                      </div> -->
-                    </div>
-                    <div class="extra content">
-                      <a>
-                        <i class="tags icon"></i>
-                        Price
-                      </a>
-                    </div>
-                  </div>
         </div>
   </div>
 
@@ -439,6 +326,8 @@
     </div>
   </div>
 </div>
+</div>
+<script src="./scripts/script.js"></script>        
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.7/semantic.min.css" rel="stylesheet"/>

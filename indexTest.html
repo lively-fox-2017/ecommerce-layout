@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue"></script> 
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>        
+    </head>
+    <body>
+        <div id="app">
+                {{ message }}
+                <button v-on:click="changeMessage">Change Message</button>
+                <button v-on:click="load">Load Message</button>
+                <list-item
+                v-for="item in data"
+                v-bind:list="item"
+                v-bind:key="item.id">
+                </list-item>
+        </div>
+        <script src="./scripts/script.js"></script>        
+    </body>
+</html>

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jasoneffendi/ecommerce-layout#readme",
   "dependencies": {
+    "axios": "^0.17.0",
     "semantic-ui": "^2.2.13"
   }
 }
