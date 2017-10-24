@@ -148,11 +148,13 @@
 <body class="pushable">
 
 <!-- Sidebar Menu -->
+<div id="app">
 <div class="ui vertical inverted sidebar menu right">
-    <a class="item">Item 1</a>
-    <a class="item">Item 2</a>
-    <a class="item">Item 3</a>
-    <a class="item">Item 4</a>
+    <cart-item
+    v-for="cart in cart"
+    v-bind:list="cart"
+    v-bind:key="cart.id">
+    </cart-item>
     <a class="item">Checkout</a>
 </div>
 
@@ -176,7 +178,7 @@
 </div>
 
 <!-- Page Contents -->
-<div class="pusher" id="app">
+<div class="pusher">
   <div class="ui inverted vertical masthead center aligned segment">
 
     <div class="ui container">
@@ -233,9 +235,10 @@
   <div class="ui center aligned segment">
       <div class="ui special cards">
           <list-item
-          v-for="item in data"
+          v-for="item in products"
           v-bind:list="item"
-          v-bind:key="item.id">
+          v-bind:key="item.id"
+          @added="add">
           </list-item>
           <div class="card" style='display:none'>
             <div class="blurring dimmable image">
@@ -325,6 +328,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
 <script src="./scripts/script.js"></script>        

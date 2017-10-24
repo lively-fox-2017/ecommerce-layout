@@ -1,12 +1,23 @@
 Vue.component('list-item', {
     props: ['list'],
-    template: '<div class="card"><div class="blurring dimmable image"><div class="ui dimmer"><div class="content"><div class="center"><div class="ui inverted button" onclick=tada()>Add to cart</div></div></div></div><img v-bind:src="list.img"></div><div class="content"><a class="header">{{ list.name }}</a></div> <div class="extra content"><a><i class="tags icon"></i>Price : {{ list.price }}</a></div></div>'
+    template: '<div class="card"><div class="blurring dimmable image"><div class="ui dimmer"><div class="content"><div class="center"><div class="ui inverted button" v-on:click="add(list)" onclick="tada()">Add to cart</div></div></div></div><img v-bind:src="list.img"></div><div class="content"><a class="header">{{ list.name }}</a></div> <div class="extra content"><a><i class="tags icon"></i>Price : {{ list.price }}</a></div></div>',
+    methods: {
+        add(list) {
+            this.$emit('added', list)
+        }
+    }
 })
+Vue.component('cart-item', {
+    props: ['cart'],
+    template: '<a class="item">{{ cart.id }}</a>'
+})
+
 var app = new Vue({
     el: '#app',
     data: {
       message: 'Hello Lively Fox!',
-      data: [],
+      products: [],
+      cart: [],
       output: ''
     },
     methods : {
@@ -16,23 +27,30 @@ var app = new Vue({
       load: function() {
           axios.get("http://localhost:3000/products")
           .then(response => {
-              this.data = response.data
+              this.products = response.data
             console.log(response.data)
-            console.log(this.data)
           }) 
           .catch(err => {
               console.log(err)
           })
       },
-      add: function() {
-          var access = localStorage.getItem('token')
-          console.log(access)
+      add: function(item) {
+        //   var access = localStorage.getItem('token')
+        //   console.log(access)
+        // console.log()
+        var obj = {
+            name: item.name,
+            id: item._id
+        }
+        this.cart.push(obj)
+        console.log(this.cart)
       }
     },
     mounted: function () {
         this.load()
     }
   })
+
 
 //   <div class="card">
 //   <div class="blurring dimmable image">
