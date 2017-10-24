@@ -45,8 +45,6 @@
 
     <div id="app" class="container">
       <div class="row">
-        {{ message }}
-{{ items }}
         <div class="navbar-expand-lg navbar-light col-12 col-lg-2 sidebar rounded-left">
           <button class="navbar-toggler category" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <!-- <span class="navbar-toggler-icon"></span> -->
@@ -76,106 +74,16 @@
 
               <div class="d-flex  flex-column p-2">
                 <div class="d-flex flex-wrap flex-row justify-content-center">
-                  
-                  <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="https://id-live-01.slatic.net/p/3/bestway-sofa-bed-2-in-1-double-sofa-multifungsi-67356-hijau-1462851772-248339-799824a4031c3fd64f879c7702bd2cae-webp-catalog_233.jpg" alt="catalog">
+
+                  <div v-for="item in items" class="p-2 card catalog m-3">
+                    <img class="card-img-top img-thumbnail" v-bind:src="item.img_url" alt="catalog">
                     <div class="card-body">
-                      <p class="card-title">Bestway Sofa Bed 2 in 1 Double</p>
+                      <p class="card-title">{{item.nama_barang}}</p>
                     </div>
                     <div class="card-footer">
-                      <small class="text-muted">RP 2.000.000</small>
+                      <small class="text-muted">{{item.hargaRupiah}}</small>
                     </div>
                   </div>
-
-                  <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/kursi-lesehan-bangku-lantai-anti-pegal-dewasa-1506050839-88026574-b8fbe1cdc1ee07f0caaac960e2430ede-webp-zoom.jpg" alt="catalog">
-                    <div class="card-body">
-                      <p class="card-title">Kursi Hacktiv8 Anti Pegal</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">RP 379.000</small>
-                    </div>
-                  </div>
-
-                  <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/rexus-gaming-chair-rgc-101-1504152317-24316083-aa29eca0d17ab76342cdcdd9408cafa3-webp-zoom.jpg" alt="catalog">
-                    <div class="card-body">
-                      <p class="card-title">Kursi Gaming Chair RGC</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">RP 299.000.000</small>
-                    </div>
-                  </div>
-
-                  <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/aiueo-lemari-pakaian-5-pintu-type-56-hitam-1475229773-45332001-0c7576faa9fb20e8f8bae92131bd3264-webp-zoom.jpg" alt="catalog">
-                    <div class="card-body">
-                      <p class="card-title">Lemari Pakaian 5 Pintu Type 5.6</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">RP 429.999</small>
-                    </div>
-                  </div>
-
-                  <div class="p-2 card catalog m-3">
-                    <img class="card-img-top img-thumbnail" src="https://id-live-01.slatic.net/p/3/paling-laku-keset-microfiber-high-quality-keset-cendol-multi-color-1490325642-34632001-595f41c6f675274a965f7eb418a0dad5-webp-zoom.jpg" alt="catalog">
-                    <div class="card-body">
-                      <p class="card-title">keset Microfiber</p>
-                    </div>
-                    <div class="card-footer">
-                      <small class="text-muted">RP 19.999</small>
-                    </div>
-                  </div>
-
-                  <div class="p-2 card catalog m-3">
-                   <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/shaggy-anti-skid-carpets-rugs-floor-matcover-80x120cm-grass-green-intl-1477500782-2546542-b0fb71ad2f8a0b4488624d99f896bb2b-webp-zoom.jpg" alt="catalog">
-                   <div class="card-body">
-                     <p class="card-title">Shaggy Anti-skid Carpets</p>
-                   </div>
-                   <div class="card-footer">
-                     <small class="text-muted">RP 335.000</small>
-                   </div>
-                 </div>
-
-                 <div class="p-2 card catalog m-3">
-                  <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/the-olive-house-lemari-tv-kabinet-serbaguna-helsinki-natural-1499998501-7980185-ea14ef155068b1c97d687328cdad15ed-webp-zoom.jpg" alt="catalog">
-                  <div class="card-body">
-                    <p class="card-title">Olive House Lemar</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">RP 1.090.000</small>
-                  </div>
-                </div>
-
-                <div class="p-2 card catalog m-3">
-                  <img class="card-img-top img-thumbnail" src="https://id-live-02.slatic.net/p/3/floating-shelves-uk-80x20-1496923455-83452842-d46da850cf5032df99959a572bdaefab-webp-zoom.jpg" alt="catalog">
-                  <div class="card-body">
-                    <p class="card-title">Floating Shelves</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted">RP 300.000</small>
-                  </div>
-                </div>
-
-                <div class="p-2 card catalog m-3">
-                 <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/olympic-premium-wall-unit-metropolis-series-1460088450-6864917-cde7e81f9cf2e9a37585f6253fb703cf-webp-zoom.jpg" alt="catalog">
-                 <div class="card-body">
-                   <p class="card-title">Olympic Premium Wall Unit Metropolis</p>
-                 </div>
-                 <div class="card-footer">
-                   <small class="text-muted">RP 5.030.400</small>
-                 </div>
-               </div>
-
-               <div class="p-2 card catalog m-3">
-              <img class="card-img-top img-thumbnail" src="https://id-live-03.slatic.net/p/3/star-projector-lampu-tidur-proyeksi-bintang-1496981678-20231942-5f0117fe9c806fa1ef38a583a7a9d578-webp-zoom.jpg" alt="catalog">
-              <div class="card-body">
-                <p class="card-title">Star Projector Lampu Tidur</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">RP 140.000</small>
-              </div>
-              </div>
 
                 </div>
               </div>
