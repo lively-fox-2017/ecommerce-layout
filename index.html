@@ -1,15 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>ecommerce layout</title>
-	<link rel="stylesheet" href="css/mdl/material.min.css">
-	<script src="css/mdl/material.min.js"></script>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ecom</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="css/fa/css/font-awesome.min.css">
+	<!-- Balloon for tooltip -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css">
+	<!-- Pure CSS grids only -->
+	<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/base-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-min.css">
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+  <!-- Main styling -->
 	<link rel="stylesheet" type="text/css" href="css/style/main.css">
 </head>
 <body>
+<div id="main-container">
+	<header>
+		<section id="navbar">
+			<div id="navbar-brand"><h1 class="tracking-in-expand">tokosebelah</h1></div>
+			<div id="navbar-actions">
+				<a href="#" id="main-cart" data-balloon="Your cart!" data-balloon-pos="left">
+					<i class="fa fa-2x fa-shopping-cart wobble-hor-bottom" aria-hidden="true"></i>
+				</a>
+			</div>
+		</section>
+		<section id="category-menu">
+			<div id="category-list">
+				<a href="#" class="category">category</a href="#">
+				<a href="#" class="category">category</a href="#">
+				<a href="#" class="category">category</a href="#">
+				<a href="#" class="category">category</a href="#">
+				<a href="#" class="category">category</a href="#">
+			</div>
+		</section>
+	</header>
 
-<script src="js/script.js"></script>
+	<section class="pure-g card-container">
+    <div class="pure-u-1 pure-u-md-1-3 pure-u-xl-1-4 item-card-wrapper">
+    	<div class="item-card scale-in-center">
+    		<div class="item-card-img">
+    			<img src="https://i.pinimg.com/736x/ac/97/81/ac9781a8a552f3843fa783f24bcf7873--product-styling-photography-branding-photography.jpg">
+    		</div>
+    		<div class="item-card-content">
+	    		<div class="item-card-title">
+	    			barang dagangan
+	    		</div>
+	    		<div class="item-card-info">
+	    			<div class="item-card-price">
+	    				<span>IDR</span>
+	    				<span>100.000</span>
+	    			</div>
+	    			<div class="item-card-actions">
+	    				<a href="#" data-balloon="Add to cart" data-balloon-pos="up">
+	    					<i class="fa fa-2x fa-plus jello-horizontal" aria-hidden="true"></i>
+	    				</a>
+	    			</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+	</section>
+	
+	<footer>
+		<p>Tokosebelah</p>
+	</footer>
+</div>
+
+<!-- The Modal -->
+<div id="cart">
+  <!-- Modal content -->
+  <div class="cart-content">
+    <div class="cart-header">
+      <span class="close">&times;</span>
+      <h2>cart</h2>
+    </div>
+    <div class="cart-body">
+    	<div class="cart-item slide-in-elliptic-left-fwd pure-g">
+    		<div class="cart-item-name pure-u-1 pure-u-md-1-2 pure-u-xl-1-2">
+    			Barang Dagangan
+    		</div>
+    		<div class="cart-item-price pure-u-1 pure-u-md-1-2 pure-u-xl-1-2">
+    			<span>IDR</span>
+    			<span>100.000</span>
+    		</div>
+    	</div>
+
+    	<div class="cart-total cart-item pure-g">
+    		<div class="cart-item-name pure-u-1 pure-u-md-1-2 pure-u-xl-1-2">
+    			Total
+    		</div>
+    		<div class="cart-item-price pure-u-1 pure-u-md-1-2 pure-u-xl-1-2">
+    			<span>IDR</span>
+    			<span>100.000</span>
+    		</div>
+    	</div>
+    </div>
+    <div class="cart-footer">
+      <button class="bounce-bottom">Checkout</button>
+    </div>
+  </div>
+
+</div>
 </body>
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/modal.js"></script>
 </html>
