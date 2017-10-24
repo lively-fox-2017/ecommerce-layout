@@ -1,0 +1,679 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
+body {
+  font-family: Helvetica; }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+a {
+  text-decoration: none; }
+
+#main-container {
+  /* keep footer at the bottom */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+header {
+  background: #35A7FF;
+  color: #FFF;
+  -webkit-box-shadow: 0px 1px 2px 0px #1d5c8c;
+  -moz-box-shadow: 0px 1px 2px 0px #1d5c8c;
+  box-shadow: 0px 1px 2px 0px #1d5c8c;
+  /* to keep footer at the bottom */
+  flex-shrink: 0;
+  padding: 0 32px; }
+
+#navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px 8px 32px;
+  border-bottom: 1px solid #7ec7ff; }
+
+#navbar-brand {
+  font-size: 24px;
+  font-weight: 200;
+  text-transform: capitalize;
+  letter-spacing: 1.5px; }
+
+#navbar-actions i {
+  color: #FFF; }
+
+#category-menu {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  white-space: nowrap;
+  overflow-x: auto; }
+
+.category {
+  padding: 8px 16px;
+  margin: 0px 8px;
+  cursor: pointer;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 10px; }
+
+@media screen and (max-width: 1024px) {
+  header {
+    padding: 0 16px; }
+
+  #navbar {
+    padding: 16px 0px; }
+
+  #category-menu {
+    padding: 16px 8px; } }
+.card-container {
+  padding: 32px;
+  /* to keep footer at the bottom */
+  flex: 1 0 auto; }
+
+.item-card-wrapper {
+  padding: 8px; }
+
+.item-card {
+  position: relative; }
+
+.item-card-content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.97);
+  color: #222;
+  padding: 0 16px;
+  font-size: 12px; }
+
+.item-card-title {
+  padding: 16px 4px;
+  border-bottom: 1px solid #35A7FF;
+  letter-spacing: 1.1px;
+  font-size: 16px;
+  font-weight: 200;
+  text-transform: capitalize; }
+
+.item-card-info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 4px; }
+
+.item-card-price span:first-child {
+  color: #6BF178;
+  font-size: 10px; }
+
+.item-card-price span:last-child {
+  color: #35A7FF;
+  font-size: 16px;
+  letter-spacing: 1.2px; }
+
+.item-card-actions i {
+  color: #6BF178; }
+
+@media screen and (max-width: 568px) {
+  .card-container {
+    padding: 8px; } }
+@media screen and (max-width: 1024px) {
+  .card-container {
+    padding: 16px; } }
+footer {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #35A7FF;
+  color: #FEFEFE;
+  padding: 16px 32px;
+  position: relative;
+  bottom: 0; }
+
+.scale-in-center {
+  -webkit-animation: scale-in-center 0.3s ease-in 200ms both;
+  animation: scale-in-center 0.3s ease-in 200ms both; }
+
+.tracking-in-expand {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both; }
+
+.bounce-bottom {
+  -webkit-animation: bounce-bottom 0.9s both;
+  animation: bounce-bottom 0.9s both; }
+
+.jello-horizontal:hover {
+  -webkit-animation: jello-horizontal 0.5s 3 both;
+  animation: jello-horizontal 0.5s 3 both; }
+
+.wobble-hor-bottom:hover {
+  -webkit-animation: wobble-hor-bottom 0.6s both;
+  animation: wobble-hor-bottom 0.6s both; }
+
+.slide-in-elliptic-left-fwd {
+  -webkit-animation: slide-in-elliptic-left-fwd 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-elliptic-left-fwd 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 17:17:12
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 21:2:32
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation tracking-in-expand
+ * ----------------------------------------
+ */
+@-webkit-keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0; }
+  40% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0; }
+  40% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 21:3:55
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation bounce-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes bounce-bottom {
+  0% {
+    -webkit-transform: translateY(45px);
+    transform: translateY(45px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1; }
+  24% {
+    opacity: 1; }
+  40% {
+    -webkit-transform: translateY(24px);
+    transform: translateY(24px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  65% {
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  82% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  93% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1; } }
+@keyframes bounce-bottom {
+  0% {
+    -webkit-transform: translateY(45px);
+    transform: translateY(45px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 1; }
+  24% {
+    opacity: 1; }
+  40% {
+    -webkit-transform: translateY(24px);
+    transform: translateY(24px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  65% {
+    -webkit-transform: translateY(12px);
+    transform: translateY(12px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  82% {
+    -webkit-transform: translateY(6px);
+    transform: translateY(6px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  93% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  25%,
+  55%,
+  75%,
+  87% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out; }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1; } }
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 21:8:18
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation jello-horizontal
+ * ----------------------------------------
+ */
+@-webkit-keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1); }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes jello-horizontal {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  30% {
+    -webkit-transform: scale3d(1.25, 0.75, 1);
+    transform: scale3d(1.25, 0.75, 1); }
+  40% {
+    -webkit-transform: scale3d(0.75, 1.25, 1);
+    transform: scale3d(0.75, 1.25, 1); }
+  50% {
+    -webkit-transform: scale3d(1.15, 0.85, 1);
+    transform: scale3d(1.15, 0.85, 1); }
+  65% {
+    -webkit-transform: scale3d(0.95, 1.05, 1);
+    transform: scale3d(0.95, 1.05, 1); }
+  75% {
+    -webkit-transform: scale3d(1.05, 0.95, 1);
+    transform: scale3d(1.05, 0.95, 1); }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 21:9:13
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+@-webkit-keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%; }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg); }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg); }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg); }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg); }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg); } }
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%; }
+  15% {
+    -webkit-transform: translateX(-30px) rotate(-6deg);
+    transform: translateX(-30px) rotate(-6deg); }
+  30% {
+    -webkit-transform: translateX(15px) rotate(6deg);
+    transform: translateX(15px) rotate(6deg); }
+  45% {
+    -webkit-transform: translateX(-15px) rotate(-3.6deg);
+    transform: translateX(-15px) rotate(-3.6deg); }
+  60% {
+    -webkit-transform: translateX(9px) rotate(2.4deg);
+    transform: translateX(9px) rotate(2.4deg); }
+  75% {
+    -webkit-transform: translateX(-6px) rotate(-1.2deg);
+    transform: translateX(-6px) rotate(-1.2deg); } }
+/* ----------------------------------------------
+ * Generated by Animista on 2017-10-24 21:12:50
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+/**
+ * ----------------------------------------
+ * @animation slide-in-elliptic-left-fwd 
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-in-elliptic-left-fwd {
+  0% {
+    -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
+    transform: translateX(-800px) rotateY(30deg) scale(0);
+    -webkit-transform-origin: -100% 50%;
+    transform-origin: -100% 50%;
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0) rotateY(0) scale(1);
+    transform: translateX(0) rotateY(0) scale(1);
+    -webkit-transform-origin: 1800px 50%;
+    transform-origin: 1800px 50%;
+    opacity: 1; } }
+@keyframes slide-in-elliptic-left-fwd {
+  0% {
+    -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
+    transform: translateX(-800px) rotateY(30deg) scale(0);
+    -webkit-transform-origin: -100% 50%;
+    transform-origin: -100% 50%;
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0) rotateY(0) scale(1);
+    transform: translateX(0) rotateY(0) scale(1);
+    -webkit-transform-origin: 1800px 50%;
+    transform-origin: 1800px 50%;
+    opacity: 1; } }
+/* The cart (background) */
+#cart {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  -webkit-animation-name: fadeIn;
+  /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s; }
+
+/* cart Content */
+.cart-content {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s; }
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold; }
+
+.close:hover,
+.close:focus {
+  color: #7EC7FF;
+  text-decoration: none;
+  cursor: pointer; }
+
+.cart-header {
+  padding: 32px;
+  background-color: #35A7FF;
+  color: white; }
+
+.cart-header h2 {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; }
+
+.cart-body {
+  padding: 32px;
+  text-align: left; }
+
+.cart-item {
+  width: 56%;
+  margin: 0 auto;
+  justify-content: space-between;
+  border-bottom: 1px solid #35A7FF;
+  padding-bottom: 8px;
+  margin-bottom: 16px; }
+
+.cart-item:last-child {
+  margin-bottom: 0; }
+
+.cart-item-name {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #35A7FF; }
+
+.cart-item-price {
+  text-align: right; }
+
+.cart-item-price span:first-child {
+  font-size: 10px;
+  color: #FF5964; }
+
+.cart-item-price span:last-child {
+  font-size: 14px;
+  color: #6BF178; }
+
+.cart-footer {
+  padding: 32px;
+  background-color: #FFF;
+  color: #FF5964; }
+
+.cart-footer button {
+  width: 56%;
+  padding: 16px 0;
+  background-color: white;
+  color: #35A7FF;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 2px solid #35A7FF;
+  transition: 0.5s; }
+
+.cart-footer button:hover {
+  background-color: #35A7FF;
+  color: white; }
+
+.cart-total {
+  border-bottom: none; }
+
+.cart-total .cart-item-name {
+  font-weight: bold;
+  letter-spacing: 1.1px;
+  text-transform: uppercase; }
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@media screen and (max-width: 768px) {
+  .cart-header {
+    padding: 16px; }
+
+  .cart-body {
+    padding: 16px 8px; }
+
+  .cart-item {
+    width: 100%; }
+
+  .cart-item-name {
+    font-size: 12px; }
+
+  .cart-item-price span:last-child {
+    font-size: 12px; }
+
+  .cart-footer button {
+    width: 100%; }
+
+  .cart-footer {
+    padding: 16px; } }
+@media screen and (max-width: 1024px) {
+  .cart-item {
+    width: 68.2%; }
+
+  .cart-footer button {
+    width: 68.2%; } }
+
+/*# sourceMappingURL=main.css.map */
