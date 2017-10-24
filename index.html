@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
@@ -41,10 +43,10 @@
 
     </header>
 
-    <div class="container">
-
+    <div id="app" class="container">
       <div class="row">
-
+        {{ message }}
+{{ items }}
         <div class="navbar-expand-lg navbar-light col-12 col-lg-2 sidebar rounded-left">
           <button class="navbar-toggler category" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <!-- <span class="navbar-toggler-icon"></span> -->
@@ -74,7 +76,7 @@
 
               <div class="d-flex  flex-column p-2">
                 <div class="d-flex flex-wrap flex-row justify-content-center">
-
+                  
                   <div class="p-2 card catalog m-3">
                     <img class="card-img-top img-thumbnail" src="https://id-live-01.slatic.net/p/3/bestway-sofa-bed-2-in-1-double-sofa-multifungsi-67356-hijau-1462851772-248339-799824a4031c3fd64f879c7702bd2cae-webp-catalog_233.jpg" alt="catalog">
                     <div class="card-body">
@@ -254,4 +256,7 @@
   </div>
 
   </body>
+  <script src="js/index.js" type="text/javascript">
+
+  </script>
 </html>
