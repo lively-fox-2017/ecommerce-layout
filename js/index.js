@@ -1,11 +1,13 @@
-new Vue({
+let vue = new Vue({
   el:'#app',
   data:{
     message:'halo',
-    items:[]
+    items:[],
+    cart: [],
+    sum_cart:0
   },
   methods:{
-    rupiahConverter:(angka)=>{
+    rupiahConverter:function (angka){
       let strAngka = angka.toString();
       let result = ''
       for( let i =strAngka.length-1; i>=0;i--){
@@ -14,6 +16,32 @@ new Vue({
       }
       result = "RP ".concat(result)
       return result
+    },
+    addToCart:function (title, img_url, harga, hargaTerbilang, id){
+      let cart = JSON.parse(localStorage.getItem('cart')) || []
+      cart.push({title, img_url, harga, hargaTerbilang, id});
+      localStorage.setItem('cart', JSON.stringify(cart))
+      this.cart = cart
+
+      this.sum_cart = this.cart.length
+    },
+    removeFromCart:function (id){
+      console.log('asdad');
+      for (i in this.cart) {
+        if(this.cart[i].id == id){
+          this.cart.splice(i,1);
+          break
+        }
+      }
+      this.sum_cart = this.cart.length
+      localStorage.setItem('cart', JSON.stringify(this.cart))
+    },
+    totalPrice:function(){
+      let rawTotal = this.cart.reduce((p, c) => {
+        return p+c.harga
+      }, 0);
+
+      return this.rupiahConverter(rawTotal);
     }
   },
   created: function(){
@@ -24,5 +52,8 @@ new Vue({
     .catch(err=>{
       console.log(err);
     })
+    console.log(this.sum_cart);
+    this.cart = JSON.parse(localStorage.cart) || [];
+    this.sum_cart = this.cart.length;
   }
 })
