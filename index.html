@@ -35,10 +35,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbar-top">
-            <a class="navbar-brand text-light"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+            <a class="navbar-brand text-light" href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
             <a class="nav-link text-light" href=""><i class="fa fa-dollar" aria-hidden="true"></i> Special Deals</a>
 
-            <a class="nav-link align-self-end text-light" data-toggle="modal" data-target="#cart" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge badge-pill badge-warning">{{ sum_cart }}</span></a>
+            <a v-if="notLoggedIn" class="nav-link text-light" href="/login.html"><i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+            <a v-else v-on:click="logout" class="nav-link text-light" href=""><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+            <a class="nav-link align-self-end text-light" data-toggle="modal" data-target="#cart" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span v-model="sum_cart" class="badge badge-pill badge-warning">{{ sum_cart }}</span></a>
           </div>
 
         </nav>
@@ -129,8 +131,7 @@
                 <p class="align-self-center text-dark ml-1"> {{ cart_item.title }} </p>
                 <div class="justify-content-between ml-auto p-2">
                   <p>  {{ cart_item.hargaTerbilang }} @</p>
-                  <button v-on:click="removeFromCart(cart_item.id)" type="button" name="button"><i class="fa fa-times" aria-hidden="true"></i></button>
-                  <button class="btn-danger" type="button" name="button">OK</button>
+                  <button class="btn-danger" v-on:click="removeFromCart(cart_item.id)" type="button" name="button"><i class="fa fa-times" aria-hidden="true"></i></button>
                 </div>
               </div>
 
@@ -146,7 +147,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button v-if="sum_cart>0" type="button" class="btn btn-danger">Checkout</button>
+            <a href="/checkout.html"><button v-if="sum_cart>0" type="button" class="btn btn-danger">Checkout</button></a>
           </div>
         </div>
       </div>

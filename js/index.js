@@ -4,7 +4,8 @@ let vue = new Vue({
     message:'halo',
     items:[],
     cart: [],
-    sum_cart:0
+    sum_cart:0,
+    notLoggedIn:false
   },
   methods:{
     rupiahConverter:function (angka){
@@ -26,7 +27,7 @@ let vue = new Vue({
       this.sum_cart = this.cart.length
     },
     removeFromCart:function (id){
-      console.log('asdad');
+
       for (i in this.cart) {
         if(this.cart[i].id == id){
           this.cart.splice(i,1);
@@ -42,6 +43,10 @@ let vue = new Vue({
       }, 0);
 
       return this.rupiahConverter(rawTotal);
+    },
+    logout:function(){
+      window.localStorage.removeItem('JWTComfortZone');
+      this.notLoggedIn = false;
     }
   },
   created: function(){
@@ -52,8 +57,20 @@ let vue = new Vue({
     .catch(err=>{
       console.log(err);
     })
-    console.log(this.sum_cart);
+
     this.cart = JSON.parse(localStorage.cart) || [];
     this.sum_cart = this.cart.length;
+    let jwt = window.localStorage.getItem('JWTComfortZone');
+
+    axios.get('http://localhost:3000/users/checklogin/'+jwt)
+    .then(response=>{
+
+      if (response.data =='not valid') {
+        throw 'already login'
+      }
+    })
+    .catch(err=>{
+      this.notLoggedIn=true;
+    })
   }
 })

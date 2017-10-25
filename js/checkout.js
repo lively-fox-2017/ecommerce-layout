@@ -1,7 +1,8 @@
 let vue = new Vue({
   el:'#app',
   data:{
-    cart:[]
+    cart:[],
+    notLoggedIn:true
   },
   methods:{
     rupiahConverter:function (angka){
@@ -32,9 +33,28 @@ let vue = new Vue({
 
       return this.rupiahConverter(rawTotal);
     },
+    purchase:function(){
+      let data= {
+        JWTtoken:window.localStorage.getItem('JWTComfortZone'),
+        items:JSON.parse(window.localStorage.getItem('cart')).map((item) => {return item.id}),
+        total:parseInt(window.localStorage.getItem('total'))
+      }
+      axios.post("http://localhost:3000/transactions/new", data)
+      .then(response=>{
+        console.log(response.data);
+        if(response.data.message=='Berhasil'){
+          window.localStorage.removeItem('cart');
+          window.location.href='/'
+          console.log('lulu');
+        }
+      })
+      .catch(err=>{
+
+      })
+    }
   },
   created:function(){
     this.cart = JSON.parse(localStorage.cart)
-    console.log(this.cart);
+    if (localStorage.JWTComfortZone) this.notLoggedIn = false
   }
 })
