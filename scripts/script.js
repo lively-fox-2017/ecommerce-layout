@@ -53,6 +53,10 @@ var app = new Vue({
         axios.post("http://localhost:3000/transactions", data)
         .then(response => {
             console.log(response)
+            if(response.data === false) {
+                console.log('You already have an ongoing transaction')
+                alert('You already have an ongoing transaction')
+            }
         }) 
         .catch(err => {
             console.log(err)
