@@ -155,7 +155,7 @@
     v-bind:cart="cart"
     v-bind:key="cart.id">
     </cart-item>
-    <a class="item">Checkout</a>
+    <a class="active item" v-on:click="checkout()">Checkout<i class="in cart icon"></i></a>
 </div>
 
 <!-- Following Menu -->
@@ -168,7 +168,7 @@
           <a class="ui button" id="toggleButton" onclick=sidebar()>Cart</a>
       </div>
       <div class="item">
-        <a class="ui button">Log in</a>
+        <a class="ui button" href="login.html">Log in</a>
       </div>
       <div class="item">
         <a class="ui primary button" href='signup.html'>Sign Up</a>
@@ -190,7 +190,7 @@
         <a class="item">Work</a>
         <div class="right item">
           <a class="ui inverted button" id="toggleButtonBar" onclick=sidebar()>Cart</a>            
-          <a class="ui inverted button">Log in</a>
+          <a class="ui inverted button" href="login.html">Log in</a>
           <a class="ui inverted button" href='signup.html'>Sign Up</a>
         </div>
       </div>
@@ -249,7 +249,7 @@
                   </div>
                 </div>
               </div>
-              <img src="">
+              <img src="http://kenh14cdn.com/2017/amazon-cardboard-box-artist-monami-ohno-japan-41-5900ad3ec6982-700-1493288355132-1493292264444.jpg">
             </div>
             <div class="content">
               <a class="header">Item 1</a>

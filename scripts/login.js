@@ -11,6 +11,11 @@ var app = new Vue({
             name: this.$refs.name.value,
             password: this.$refs.password.value})
         .then(response => {
+            if(response) {
+                console.log(response)
+                localStorage.setItem('token', response.data)
+                window.location.href = "index.html"
+            }
             console.log(response.data)
         }) 
         .catch(err => {
@@ -21,5 +26,6 @@ var app = new Vue({
       }
     },
     mounted: function () {
+        localStorage.removeItem('token')
     }
   })
