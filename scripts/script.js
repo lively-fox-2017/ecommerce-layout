@@ -9,7 +9,7 @@ Vue.component('list-item', {
 })
 Vue.component('cart-item', {
     props: ['cart'],
-    template: '<a class="item">{{ cart.id }}</a>'
+    template: '<a class="item">{{ cart.name }}</a>'
 })
 
 var app = new Vue({
@@ -37,13 +37,9 @@ var app = new Vue({
       add: function(item) {
         //   var access = localStorage.getItem('token')
         //   console.log(access)
-        // console.log()
-        var obj = {
-            name: item.name,
-            id: item._id
-        }
-        this.cart.push(obj)
-        console.log(this.cart)
+        // console.log(this.products[this.products.indexOf(item)])
+        this.cart.push(this.products[this.products.indexOf(item)])
+        // this.cart.push()
       }
     },
     mounted: function () {
