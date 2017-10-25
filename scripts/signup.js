@@ -8,7 +8,7 @@ var app = new Vue({
     },
     methods : {
       getFormValues: function getFormValues () {
-        axios.post("http://localhost:3000/customers", {
+        axios.post("http://35.198.214.127:3000/customers", {
             name: this.$refs.name.value,
             password: this.$refs.password.value,
             email: this.$refs.email.value

@@ -17,7 +17,7 @@ var app = new Vue({
       load: function() {
         var retrievedObject = localStorage.getItem('token'); 
         console.log(retrievedObject)
-        axios.get(`http://localhost:3000/transactions?token=${retrievedObject}`)
+        axios.get(`http://35.198.214.127:3000/transactions?token=${retrievedObject}`)
         .then(response => {
             this.cart = response.data.items
             this.data = response.data

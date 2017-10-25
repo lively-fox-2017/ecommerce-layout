@@ -25,7 +25,7 @@ var app = new Vue({
         this.message = 'Bello'
       },
       load: function() {
-          axios.get("http://localhost:3000/products")
+          axios.get("http://35.198.214.127:3000/products")
           .then(response => {
               this.products = response.data
             console.log(response.data)
@@ -50,7 +50,7 @@ var app = new Vue({
             token: retrievedObject,
             cart: this.cart 
         }
-        axios.post("http://localhost:3000/transactions", data)
+        axios.post("http://35.198.214.127:3000/transactions", data)
         .then(response => {
             console.log(response)
             if(response.data === false) {
