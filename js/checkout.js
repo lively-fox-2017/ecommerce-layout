@@ -37,7 +37,7 @@ let vue = new Vue({
       let data= {
         JWTtoken:window.localStorage.getItem('JWTComfortZone'),
         items:JSON.parse(window.localStorage.getItem('cart')).map((item) => {return item.id}),
-        total:parseInt(window.localStorage.getItem('total'))
+        total:this.totalPrice()
       }
       axios.post("http://localhost:3000/transactions/new", data)
       .then(response=>{
