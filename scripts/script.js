@@ -25,7 +25,7 @@ var app = new Vue({
         this.message = 'Bello'
       },
       load: function() {
-          axios.get("http://35.198.214.127:3000/products")
+          axios.get("http://server.fox-son.tk:3000/products")
           .then(response => {
               this.products = response.data
             console.log(response.data)
@@ -35,28 +35,27 @@ var app = new Vue({
           })
       },
       add: function(item) {
-        //   var access = localStorage.getItem('token')
-        //   console.log(access)
         // console.log(this.products[this.products.indexOf(item)])
-        var retrievedObject = localStorage.getItem('token');
-        console.log(retrievedObject)
         this.cart.push(this.products[this.products.indexOf(item)])
         // this.cart.push()
       },
       checkout: function() {
         console.log(this.cart)
+        if(this.cart.length < 1) {
+            return alert('You have no items in your cart')
+        }
         var retrievedObject = localStorage.getItem('token');        
         var data = {
             token: retrievedObject,
             cart: this.cart 
         }
-        axios.post("http://35.198.214.127:3000/transactions", data)
+        axios.post("http://server.fox-son.tk:3000/transactions", data)
         .then(response => {
             console.log(response)
             if(response.data === false) {
-                console.log('You already have an ongoing transaction')
                 alert('You already have an ongoing transaction')
             }
+            window.location.href = "checkout.html"
         }) 
         .catch(err => {
             console.log(err)

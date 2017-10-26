@@ -17,7 +17,7 @@ var app = new Vue({
     },
     methods : {
       getFormValues: function getFormValues () {
-        axios.put("http://localhost:3000/customers", {
+        axios.put("http://server.fox-son.tk:3000/customers", {
             oldName: this.$refs.old_name.value,
             oldPassword: this.$refs.old_password.value,
             name: this.$refs.name.value,
@@ -33,7 +33,7 @@ var app = new Vue({
       },
       hapus: function(item) {
         console.log('hayo ', item)
-        axios.delete(`http://localhost:3000/customers/${item._id}`)
+        axios.delete(`http://server.fox-son.tk:3000/customers/${item._id}`)
         .then(result => {
             console.log(result)
         })
@@ -43,7 +43,7 @@ var app = new Vue({
       }
     },
     mounted: function () {
-        axios.get("http://localhost:3000/customers")
+        axios.get("http://server.fox-son.tk:3000/customers")
         .then(response => {
             this.customers = response.data
         })

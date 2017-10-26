@@ -17,8 +17,13 @@ var app = new Vue({
       load: function() {
         var retrievedObject = localStorage.getItem('token'); 
         console.log(retrievedObject)
-        axios.get(`http://35.198.214.127:3000/transactions?token=${retrievedObject}`)
+        axios.get(`http://server.fox-son.tk:3000/transactions?token=${retrievedObject}`)
         .then(response => {
+            if(response.data === '') {
+                console.log('kosong gan')
+                alert('You have no ongoing transactions')                
+                window.location.href = "index.html"
+            }
             this.cart = response.data.items
             this.data = response.data
             console.log(response)
@@ -28,8 +33,17 @@ var app = new Vue({
         })
       },
       checkout: function() {
-        console.log(this.cart)
-        var retrievedObject = localStorage.getItem('token');        
+        console.log(this.data._id)
+        var id = this.data._id
+        this.hasLogin()
+        axios.delete(`http://server.fox-son.tk:3000/transactions?id=${id}`)
+        .then(response => {
+            console.log(response)
+            window.location.href = "index.html"
+        })
+        .catch(err => {
+            console.log(err)
+        })        
       },
       hasLogin: function() {
         var retrievedObject = localStorage.getItem('token');
