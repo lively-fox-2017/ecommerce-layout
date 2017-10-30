@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <!--vue js-->
+    <script src = "https://unpkg.com/vue"></script >
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+    <link href="./css/carousel.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="./js/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/holder.min.js"></script>
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+
+  </head>
+
+  <body>
+    <!--navbar - menu-->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <nav style="background-color:#744a1a" class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#"><img style="width:25px" src="http://prahastha.com/wp-content/uploads/2017/03/Logo-Prahastha-II.png"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Item Category <span class="caret"></span></a>
+                  <ul class="dropdown-menu" style="background-color:#744a1a" >
+                    <li><a href="#" style="color:#000000">Furniture</a></li>
+                    <li><a href="#" style="color:#000000">Tools</a></li>
+                    <!-- <li role="separator" class="divider"></li> -->
+                    <!-- <li class="dropdown-header">Nav header</li> -->
+                    <li><a href="#" style="color:#000000">Weapons</a></li>
+                    <li><a href="#" style="color:#000000">Clothes</a></li>
+                    <li><a href="#" style="color:#000000">Other</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!--Slide pada boostrap dinamakan crousel-->
+    <div style="height:600px" id="slide" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#slide" data-slide-to="0" class="active"></li>
+        <li data-target="#slide" data-slide-to="1"></li>
+        <li data-target="#slide" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+
+        <div style="height:600px" class="item active">
+          <img class="first-slide" style="height:100%" src="https://i.ytimg.com/vi/FOyuZXUkawg/maxresdefault.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Antiques are art</h1>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:600px" class="item">
+          <img class="second-slide" style="height:100%" src="https://i.pinimg.com/originals/5e/48/dc/5e48dc8f78b6bc6351533358ec3d0bbf.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Antique Is A Luxury</h1>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:600px" class="item">
+          <img class="third-slide" style="height:100%" src="http://e134de5b2d34af51d49a-e2adc5e172204a9a1f2e48ad6244f023.r83.cf1.rackcdn.com/restaurants-irs/235204/Antique-Bazaar-Restaurant.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Antique Is A Passion</h1>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Shop Now</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Shoping Chart-->
+    <div class="sticky-container">
+      <ul class="sticky">
+        <li data-toggle="modal" data-target="#myModal">
+          <img src="https://www.fairvalue.com/wp-content/uploads/2016/05/shop-landing-cart-icon.png" width="32" height="32">
+        </li>
+      </ul>
+    </div>
+
+    <div class="container" id="app">
+      <div style="padding-bottom:20px" class="col-md-3" v-for="todo in metodData">
+        <img class="img-circle" style="width:100%" v-bind:src="todo.linkimage" alt="">
+        <p style="color:#ffffff;text-align:center"><b>{{todo.namaproduct}}</b></p>
+        <p style="color:#ffffff;text-align:center"><b>PRICE: {{todo.harga}}</b></p>
+        <button v-on:click="buy(todo)" class="btn btn-danger btn-lg btn-block" type="button" name="button">Beli</button>
+      </div>
+
+      <div class="container">
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Keranjang Belanja</h4>
+              </div>
+              <div class="modal-body">
+                <table class="table">
+                  <tr>
+                    <th>Nama Produk</th>
+                    <th>Harga</th>
+                    <th>Jumlah</th>
+                  </tr>
+                  <tr v-for="belanja in cartData">
+                    <td>{{belanja.namaproduct}}</td>
+                    <td>{{belanja.harga}}</td>
+                    <td>{{belanja.jumlah}}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    var app = new Vue({
+      el: '#app',
+      data:{
+        metodData:[],
+        cartData:[]
+      },
+      created(){
+          axios.get('http://localhost:3000/product')
+          .then((response) => {
+            console.log(response);
+            this.metodData = response.data
+          }
+        )
+      },
+      methods:{
+        buy: function(todo){
+          let data = this.cartData.findIndex((test)=>{
+            return test._id == todo._id
+          });
+          if (data === -1) {
+            todo.jumlah=1
+            console.log(todo);
+            this.cartData.push(todo)
+          }else {
+            this.cartData[data].jumlah+=1
+          }
+
+        }
+      }
+
+
+      })
+    </script>
+
+  </body>
+</html>
