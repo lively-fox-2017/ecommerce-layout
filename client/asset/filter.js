@@ -13,7 +13,6 @@ new Vue({
     getAll () {
       axios.get('http://localhost:3000/api')
       .then(response => {
-        // console.log(response.data)
         this.cart = response.data
       })
       .catch(err => {
@@ -21,15 +20,20 @@ new Vue({
       })
     },
     getContent (item) {
-      // console.log('ini object item', item)
       this.itemCart.push(item)
     },
     getActiveProduct (item) {
-      console.log('ini barang modals', item)
       this.activeProduct = item
     }
     },
   mounted: function () {
     this.getAll()
+  },
+  computed: {
+    finalPrice() {
+      return this.itemCart.reduce(function (prevValue, itemPrice){
+        return prevValue + itemPrice.price_product
+      }, 0)
+    }
   }
 })

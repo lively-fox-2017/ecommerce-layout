@@ -1,4 +1,5 @@
 const dbEcom = require('../model/ecommerce')
+const dbPrice = require('../model/finalprice')
 
 const getAll = (req, res) => {
   dbEcom.find({}, function (err, result) {
@@ -25,8 +26,20 @@ const createItem = (req, res) => {
   })
 }
 
+const createFinalPrice = (req, res) => {
+  dbEcom.create({
+    dbPrice: req.body.final_price
+  }, function (err, result) {
+    if (!err) {
+      res.send(result)
+    } else {
+      res.send(err)
+    }
+  })
+}
 
 module.exports = {
   getAll,
-  createItem
+  createItem,
+  createFinalPrice
 }
