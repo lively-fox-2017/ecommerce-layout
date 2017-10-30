@@ -7,10 +7,13 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+      <script type="text/javascript" src="https://unpkg.com/vue/dist/vue.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <link rel="stylesheet" href="/asset/style.css">
   </head>
   <body>
     <!-- navbar -->
+    <div id="app">
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -140,11 +143,13 @@
   <!-- thumbnail -->
   <div class="container">
   <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4" v-for="item in cart">
             <div class="thumbnail">
-              <img src="asset/gambar/12.jpg" alt="" class="img-responsive">
+              <img v-bind:src="item.image" alt="" class="img-responsive">
               <div class="caption">
-                <h4><a href="#">Men Watch</a></h4>
+                <h4><a href="#">{{item.product_name}}</a></h4>
+                <h4> Rp. {{item.price_product}}</h4>
+                <h4>{{item.quantity}} pcs</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
               </div>
               <div class="ratings">
@@ -159,137 +164,12 @@
               </div>
               <div class="space-ten"></div>
               <div class="btn-ground text-center">
-                  <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view"><i class="fa fa-search"></i> Quick View</button>
+                  <button type="button" class="btn btn-primary" @click="getContent(item)"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view" @click="getActiveProduct(item)"><i class="fa fa-search"></i> Quick View</button>
               </div>
               <div class="space-ten"></div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="asset/gambar/13.jpg" alt="" class="img-responsive">
-              <div class="caption">
-                <h4><a href="#">Womens Wardrobe</a></h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-              <div class="ratings">
-                <p>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                   (15 reviews)
-                </p>
-              </div>
-              <div class="space-ten"></div>
-              <div class="btn-ground text-center">
-                  <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view1"><i class="fa fa-search"></i> Quick View</button>
-              </div>
-              <div class="space-ten"></div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <img src="asset/gambar/14.jpg" alt="" class="img-responsive">
-              <div class="caption">
-                <h4><a href=  "#">Men Eye Wear</a></h4>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              </div>
-              <div class="ratings">
-                <p>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                  <span class="glyphicon glyphicon-star"></span>
-                   (15 reviews)
-                </p>
-              </div>
-              <div class="space-ten"></div>
-              <div class="btn-ground text-center">
-                  <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view2"><i class="fa fa-search"></i> Quick View</button>
-              </div>
-              <div class="space-ten"></div>
-            </div>
-          </div>
-          <div class="col-md-4">
-                <div class="thumbnail">
-                  <img src="asset/gambar/15.jpg" alt="" class="img-responsive">
-                  <div class="caption">
-                    <h4><a href="#">Men Shoes</a></h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                  </div>
-                  <div class="ratings">
-                    <p>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                      <span class="glyphicon glyphicon-star"></span>
-                       (15 reviews)
-                    </p>
-                  </div>
-                  <div class="space-ten"></div>
-                  <div class="btn-ground text-center">
-                      <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view3"><i class="fa fa-search"></i> Quick View</button>
-                  </div>
-                  <div class="space-ten"></div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                    <div class="thumbnail">
-                      <img src="asset/gambar/16.jpg" alt="" class="img-responsive">
-                      <div class="caption">
-                        <h4><a href="#">Women Shoes</a></h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      </div>
-                      <div class="ratings">
-                        <p>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                           (15 reviews)
-                        </p>
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground text-center">
-                          <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view4"><i class="fa fa-search"></i> Quick View</button>
-                      </div>
-                      <div class="space-ten"></div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                        <div class="thumbnail">
-                          <img src="asset/gambar/17.jpg" alt="" class="img-responsive">
-                          <div class="caption">
-                            <h4><a href="#">Women Bag</a></h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                          </div>
-                          <div class="ratings">
-                            <p>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                              <span class="glyphicon glyphicon-star"></span>
-                               (15 reviews)
-                            </p>
-                          </div>
-                          <div class="space-ten"></div>
-                          <div class="btn-ground text-center">
-                              <button type="button" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
-                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#product_view5"><i class="fa fa-search"></i> Quick View</button>
-                          </div>
-                          <div class="space-ten"></div>
-                        </div>
-                      </div>
   </div>
 </div>
 <div class="modal fade product_view" id="product_view">
@@ -302,337 +182,7 @@
           <div class="modal-body">
               <div class="row">
                   <div class="col-md-6 product_img">
-                      <img src="asset/gambar/12.jpg" class="img-responsive">
-                  </div>
-                  <div class="col-md-6 product_content">
-                      <h4>Product Id: <span>51526</span></h4>
-                      <div class="rating">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          (10 reviews)
-                      </div>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                      <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="gold">Gold</option>
-                                  <option value="rose gold">Rose Gold</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="">Capacity</option>
-                                  <option value="">16GB</option>
-                                  <option value="">32GB</option>
-                                  <option value="">64GB</option>
-                                  <option value="">128GB</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">QTY</option>
-                                  <option value="">1</option>
-                                  <option value="">2</option>
-                                  <option value="">3</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground">
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="modal fade product_view" id="product_view1">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-              <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-6 product_img">
-                      <img src="asset/gambar/13.jpg" class="img-responsive">
-                  </div>
-                  <div class="col-md-6 product_content">
-                      <h4>Product Id: <span>51526</span></h4>
-                      <div class="rating">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          (10 reviews)
-                      </div>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                      <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="gold">Gold</option>
-                                  <option value="rose gold">Rose Gold</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="">Capacity</option>
-                                  <option value="">16GB</option>
-                                  <option value="">32GB</option>
-                                  <option value="">64GB</option>
-                                  <option value="">128GB</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">QTY</option>
-                                  <option value="">1</option>
-                                  <option value="">2</option>
-                                  <option value="">3</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground">
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="modal fade product_view" id="product_view2">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-              <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-6 product_img">
-                      <img src="asset/gambar/14.jpg" class="img-responsive">
-                  </div>
-                  <div class="col-md-6 product_content">
-                      <h4>Product Id: <span>51526</span></h4>
-                      <div class="rating">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          (10 reviews)
-                      </div>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                      <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="gold">Gold</option>
-                                  <option value="rose gold">Rose Gold</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="">Capacity</option>
-                                  <option value="">16GB</option>
-                                  <option value="">32GB</option>
-                                  <option value="">64GB</option>
-                                  <option value="">128GB</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">QTY</option>
-                                  <option value="">1</option>
-                                  <option value="">2</option>
-                                  <option value="">3</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground">
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="modal fade product_view" id="product_view3">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-              <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-6 product_img">
-                      <img src="asset/gambar/15.jpg" class="img-responsive">
-                  </div>
-                  <div class="col-md-6 product_content">
-                      <h4>Product Id: <span>51526</span></h4>
-                      <div class="rating">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          (10 reviews)
-                      </div>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                      <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="gold">Gold</option>
-                                  <option value="rose gold">Rose Gold</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="">Capacity</option>
-                                  <option value="">16GB</option>
-                                  <option value="">32GB</option>
-                                  <option value="">64GB</option>
-                                  <option value="">128GB</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">QTY</option>
-                                  <option value="">1</option>
-                                  <option value="">2</option>
-                                  <option value="">3</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground">
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="modal fade product_view" id="product_view4">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-              <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-6 product_img">
-                      <img src="asset/gambar/16.jpg" class="img-responsive">
-                  </div>
-                  <div class="col-md-6 product_content">
-                      <h4>Product Id: <span>51526</span></h4>
-                      <div class="rating">
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          <span class="glyphicon glyphicon-star"></span>
-                          (10 reviews)
-                      </div>
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                      <h3 class="cost"><span class="glyphicon glyphicon-usd"></span> 75.00 <small class="pre-cost"><span class="glyphicon glyphicon-usd"></span> 60.00</small></h3>
-                      <div class="row">
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">Color</option>
-                                  <option value="black">Black</option>
-                                  <option value="white">White</option>
-                                  <option value="gold">Gold</option>
-                                  <option value="rose gold">Rose Gold</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-6 col-xs-12">
-                              <select class="form-control" name="select">
-                                  <option value="">Capacity</option>
-                                  <option value="">16GB</option>
-                                  <option value="">32GB</option>
-                                  <option value="">64GB</option>
-                                  <option value="">128GB</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                          <div class="col-md-4 col-sm-12">
-                              <select class="form-control" name="select">
-                                  <option value="" selected="">QTY</option>
-                                  <option value="">1</option>
-                                  <option value="">2</option>
-                                  <option value="">3</option>
-                              </select>
-                          </div>
-                          <!-- end col -->
-                      </div>
-                      <div class="space-ten"></div>
-                      <div class="btn-ground">
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</button>
-                          <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-heart"></span> Add To Wishlist</button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</div>
-<div class="modal fade product_view" id="product_view5">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-              <h3 class="modal-title"></h3>
-          </div>
-          <div class="modal-body">
-              <div class="row">
-                  <div class="col-md-6 product_img">
-                      <img src="asset/gambar/17.jpg" class="img-responsive">
+                      <img :src="activeProduct.image" class="img-responsive">
                   </div>
                   <div class="col-md-6 product_content">
                       <h4>Product Id: <span>51526</span></h4>
@@ -690,106 +240,39 @@
 </div>
   <!-- end thumbnail -->
   <!-- start cart -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="background-color: white">
-    <div class="container">
-    <div class="row">
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" style="background-color: black">
       <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
-        <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
-                            </div>
-                        </div></td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="3">
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
-                        <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-warning"><strong>Leaves warehouse in 2 - 3 weeks</strong></span>
-                            </div>
-                        </div></td>
-                        <td class="col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="2">
-                        </td>
-                        <td class="col-md-1 text-center"><strong>$4.99</strong></td>
-                        <td class="col-md-1 text-center"><strong>$9.98</strong></td>
-                        <td class="col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>$31.53</strong></h3></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
-                        <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+      <div class="container">
+	<h1>Shopping Cart</h1><hr>
+	<table class="table table-striped table-hover table-bordered">
+        <tbody>
+            <tr>
+                <th>Item</th>
+                <th>QTY</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
+            <tr v-for="item in itemCart">
+                <td>{{ item.product_name }}</td>
+                <td>1 <a href="#">X</a></td>
+                <td>Rp. {{ item.price_product }}</td>
+                <td>Rp. {{ item.price_product }}</td>
+            </tr>
+            <tr>
+                <th colspan="3"><span class="pull-right">Total</span></th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><a href="#" class="btn btn-primary">Continue Shopping</a></td>
+                <td colspan="3"><a href="#" class="pull-right btn btn-success">Checkout</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
   </div>
   <!-- end cart -->
   <!-- start footer -->
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-
     <div class="footer">
       <div class="container">
               <a href='#'><i class="fa fa-twitch fa-3x fa-fw"></i></a>
@@ -804,6 +287,7 @@
       </div>
     </div>
   <!-- end footer -->
+  </div>
   </body>
-  <script type="text/javascript" src="asset/filter.js"></script>
+  <script type="text/javascript" src="/asset/filter.js"></script>
 </html>
