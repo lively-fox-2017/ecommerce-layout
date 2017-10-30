@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/font-awesome.min.css">    
+    <script src="asset/js/jquery-3.2.1.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" type="text/css" rel="stylesheet">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+    <div class="container">
+        <div class="col-md-2 right-menu">
+            <div class="left-menu">
+                <div id="account" @click="showAccount()">
+                    <i class="fa fa-user-circle"></i> 
+                    <p>My Account</p>        
+                </div>
+            </div>
+            <div class="left-menu">
+                <i id="cart" class="fa fa-shopping-cart" data-toggle="modal" data-target="#list-item"></i>
+                <p id="poin-cart"></p>
+                <p>Cart</p>
+            </div>
+            <div class="left-menu">
+                <i class="fa fa-check-square" data-toggle="modal" data-target="#list-item"></i>
+                <p>Checkout</p>
+            </div>
+            <div class="left-menu">
+                <div id="signout" @click="signOut()">
+                    <i class="fa fa-sign-out"></i>
+                    <p>Logout</p>
+                </div>
+            </div>
+        </div>
+        <div class="c50"></div>
+        <header class="row">
+            <div class="col-md-11 header">
+                <div class="col-md-3 logo">
+                    <i class="fa fa-wrench"></i>&nbsp<label>S-hardware</label>
+                </div>
+                <div class="col-md-9 search">
+                    <div id="search">
+                        <input type="text" placeholder="Cari barang">
+                        <input type="button" value="Search">        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row">
+            <div class="col-md-3 categori">
+                <div class="categori-top">
+                    <h3>Category</h3>
+                </div>
+                <!-- <div class="categori-menu">
+                    <ul>
+                        <li><a href="#">Komputer</a></li>
+                        <li><a href="#">Elektronik</a></li>
+                        <li><a href="#">Kitchen set</a></li>
+                        <li><a href="#">Automotive</a></li>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Office</a></li>
+                    </ul>                    
+                </div>                 -->
+            </div>
+            <div class="col-md-8 categori">
+                <div class="carousol-nav">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Electronic</a></li>
+                        <li><a href="#">Automotive</a></li>
+                        <li><a href="#">Other</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </div>               
+        <div class="c10"></div>
+            <div class="row" id="v-for-all_products">
+                <div class="col-md-2 detail" v-for=" value in all_products">       
+                    <img v-bind:src="value.imgUrl" v-bind:alt="value.type">
+                        <div class="content">
+                            <h3>{{value.merek}}, {{value.type}}</h3>
+                            <p>{{value.spec}}</p> 
+                        </div>
+                        <div class="option">
+                            <a href="#" class="buy" v-on:click="showCart(value._id)">Buy</a>
+                            <a v-bind:data-id="value.type" href="#" id="detail" data-toggle="modal" data-target="#detail-item">Detail</a>
+                        </div>
+                    </div>                          
+                </div>
+            </div>
+            <!-- List item  -->
+            <div class="modal fade" id="addCart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h2 class="modal-title" id="myModalLabel"></h2>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Buy</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!-- List item  -->
+            <div class="modal fade" id="detail-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title" id="myModalLabel"></h2>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Buy</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Detail item  -->
+            <div class="modal fade" id="list-item" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">List item</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input id="username" type="text" name="username" placeholder="ex: username">
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div style="clear: both; height:100px"></div>
+            <!-- Login Modal -->
+            <div class="modal fade" id="login-form" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form @submit.prevent="getLogin">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Please Login</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input id="username" type="text" v-model="login.username" placeholder="ex: username">
+                                <input id="password" type="text" v-model="login.password" placeholder="ex: username123">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both; height:100px"></div>
+            <!-- Account Modal -->
+            <div class="modal fade" id="user-account" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form @submit.prevent="getLogin">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">User Profile</h4>
+                            </div>
+                            <div class="modal-body">
+                                <input id="username" type="text" v-model="login.username" placeholder="ex: username">
+                                <input id="password" type="text" v-model="login.password" placeholder="ex: username123">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script src="asset/js/script.js"></script>
+    </body>
+</html>
+
+
+
+
+                <!-- <div class="row">
+                    <div id="home-slider" class="home carousel slide carousel-fade" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="item active" style="background-image: url(asset/images/slider/part1.jpg)">
+                                <div class="caption">
+                                    <h1 class="animated fadeInLeftBig">Automotive Sparepart <span>Oxygen</span></h1>
+                                    <p class="animated fadeInRightBig">Original and guarate</p>
+                                    <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+                                </div>
+                                    </div>
+                                    <div class="item" style="background-image: url(asset/images/slider/computer.jpg)">
+                                        <div class="caption">
+                                          <h1 class="animated fadeInLeftBig">Furniture all style <span>Oxygen</span></h1>
+                                          <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+                                          <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+                                        </div>
+                                      </div>
+                                      <div class="item" style="background-image: url(asset/images/slider/furniture.jpg)">
+                                      <div class="caption">
+                                        <h1 class="animated fadeInLeftBig">Furniture all style <span>Oxygen</span></h1>
+                                        <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+                                        <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+                                      </div>
+                                    </div>
+                                    <div class="item" style="background-image: url(asset/images/slider/furniture.jpg)">
+                                      <div class="caption">
+                                        <h1 class="animated fadeInLeftBig">Furniture all style <span>Oxygen</span></h1>
+                                        <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+                                        <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+                                      </div>
+                                    </div>
+                                    <div class="item" style="background-image: url(asset/images/slider/kitchen-set.jpg)">
+                                      <div class="caption">
+                                        <h1 class="animated fadeInLeftBig">Kitchen set the best quality <span>Creative</span></h1>
+                                        <p class="animated fadeInRightBig">Bootstrap - Responsive Design - Retina Ready - Parallax</p>
+                                        <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <a class="left-control" href="#home-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
+                                  <a class="right-control" href="#home-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                </div>
+            </div>
+        </div> -->
